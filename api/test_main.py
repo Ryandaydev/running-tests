@@ -61,14 +61,14 @@ def test_read_leagues_with_id():
 def test_read_leagues():
     response = client.get("/v0/leagues/?skip=0&limit=500")
     assert response.status_code == 200
-    assert len(response.json()) == 5
+    assert len(response.json()) == 5 
 
 
 # test /v0/teams/
 def test_read_teams():
     response = client.get("/v0/teams/?skip=0&limit=500")
     assert response.status_code == 200
-    assert len(response.json()) == 20
+    assert len(response.json()) == 52 #v0.2
 
 
 # test /v0/teams/
@@ -95,12 +95,12 @@ def test_counts():
     response_data = response.json()
     assert response.status_code == 200
     assert response_data["league_count"] == 5
-    assert response_data["team_count"] == 20
+    assert response_data["team_count"] == 52 #v0.2
     assert response_data["player_count"] == 1018
-    assert response_data["week_count"] == 17 #v0.2
+    assert response_data["week_count"] == 18 #v0.2
 
 #v0.2
 def test_read_weeks():
     response = client.get("/v0/weeks/?skip=0&limit=1000")
     assert response.status_code == 200
-    assert len(response.json()) == 17
+    assert len(response.json()) == 18 #v0.2
