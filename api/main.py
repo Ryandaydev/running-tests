@@ -193,7 +193,7 @@ def read_leagues(
     "/v0/teams/",
     response_model=list[schemas.Team],
     summary="Get all the SWC fantasy football teams that match the parameters you send",
-    description="""Use this endpoint to get lists of SWC fantasy football teams. You us the skip and limit to perform pagination of the API. Team name is not guaranteed to be unique. If you get the Team ID from another query such as v0_get_players, you can match it with the Team ID from this query.  Don't use the Team ID for counting or logic, because that is an internal ID and is not guaranteed to be sequential""",
+    description="""Use this endpoint to get lists of SWC fantasy football teams. You us the skip and limit to perform pagination of the API. Team name may not be unique. If you get the Team ID from another query you can match it with the Team ID from this query.  Don't use the Team ID for counting or logic.""",
     response_description="A list of teams on the SWC fantasy football website.",
     operation_id="v0_get_teams",
     tags=["membership"],
